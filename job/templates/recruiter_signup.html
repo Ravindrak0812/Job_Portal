@@ -1,0 +1,109 @@
+{% load static %}
+
+{% block body %}
+
+{% include 'navigation.html' %}
+
+<script>
+    function checkpass()
+    {
+    if(document.signup.pwd.value!=document.signup.cpwd.value){
+    alert('Password and Repeat Password field does not match');
+    document.signup.cpwd.focus();
+    return false;
+    }
+    return true;
+    }
+</script>
+
+
+<div class="btn btn-warning" style="width:100%; border-radius:0px; margin-top:0.3%;">
+    <marquee  class="text-black"  style ="">
+        <b>Recruiter SignUp</b>
+    </marquee>
+</div>
+
+{% for msg in messages %}
+  <div  class="btn btn-success" style="backgroung-color:black; border-radius:0px;  margin-top:0.3%; width:100%"><marquee ><b>{{msg}}</b></marquee></div>
+{%  endfor   %}
+<form  class="container mt-5" onsubmit="return checkpass();" name="signup" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <div class="from-row">
+        <div class="from-group col-md-6" >
+            <label><b>First Name</b></label>
+            <input  type="text" class="form-control" name="finame" placeholder="Enter First Name" required>
+        </div>
+        <br>
+
+        <div class="from-group col-md-6" >
+            <label><b>Last Name</b></label>
+            <input type="text" class="form-control" name="lname" placeholder="Enter Last Name" required>
+        </div>
+        <br>
+    </div>
+
+
+    <div class="from-row">
+        <div class="from-group col-md-6" >
+            <label><b>Contact</b></label>
+            <input type="number" class="form-control" name="contact" placeholder="Enter Contact Number" required>
+        </div>
+        <br>
+
+
+        <div class="from-group col-md-6" >
+            <label><b>Company</b></label>
+            <input type="text" class="form-control" name="company" placeholder="Enter Your Company Name" required>
+        </div>
+        <br>
+
+        <div class="from-group col-md-6" >
+            <label><b>Email Id</b></label>
+            <input type="email" pattern="/(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"class="form-control" name="email" placeholder="Enter Email Address" required>
+        </div>
+        <br>
+    </div>
+
+    <div class="from-row">
+        <div class="from-group col-md-6" >
+            <label><b>Password</b></label>
+            <input  type="password" class="form-control" name="pwd" placeholder="Enter Password" required>
+        </div>
+        <br>
+
+        <div class="from-group col-md-6" >
+            <label><b>Confirm Password</b></label>
+            <input type="password" class="form-control" name="cpwd" placeholder="Enter again password" required>
+        </div>
+        <br>
+    </div>
+
+    <div class="from-row">
+        <div class="from-group col-md-6" >
+           <label ><b>Gender</b></label>
+            <div style="border:1px solid lightgrey ; padding : 5px; border-radius:6px">
+            <div  style="margin-top:1%" class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="customeRadioInline1" name="gender" class="custom-control-input" value="Male">
+                <label class="custom-control-lable" for="customeRadioInline1">Male</label>
+            </div>
+
+           <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="customeRadioInline2" name="gender" class="custom-control-input" value="Female">
+                <label class="custom-control-lable" for="customeRadioInline2">Female</label>
+            </div>
+                </div>
+
+            <div  style="margin-top:1%" class="from-group col-md-6" >
+            <label><b>Image</b></label>
+            <input type="file" class="form-control" name="image"  required>
+        </div>
+        <br>
+    </div>
+    </div>
+    <input type="submit" value="Submit" class="btn btn-success" style="width:50%;border-radius:0%">
+</form>
+<br>
+<br>
+{% include 'footer.html'%}
+{% endblock  %}

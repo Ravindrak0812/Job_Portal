@@ -1,0 +1,34 @@
+{% load static %}
+
+{% block body %}
+
+{% include 'user_navigation.html' %}
+<style>
+
+tr{text-align:center}
+
+</style>
+
+<div class="btn btn-warning" style="border-radius:0px; width:100%; margin-top:0.3%">
+    <marquee class="text-black" >
+        <b>Apply For Job</b>
+    </marquee>
+</div>
+{% for msg in messages %}
+  <div  class="btn btn-warning" style="backgroung-color:black; border-radius:0px;  margin-top:0.3%; width:100%"><marquee ><b>{{msg}}</b></marquee>
+  </div>
+{%  endfor   %}
+<hr>
+<div class="container shadow-lg py-2 mb-2">
+<form method="post" enctype="multipart/form-data">
+ {% csrf_token %}
+
+    <div class="form-row">
+    <label>Upload Resume</label>
+    <input type="file" class="form-control" name="resume">
+
+</div>
+    <input type="submit"  onclick="alert('Form Applied Successfully')" value="submit" class="btn btn-danger mt-3">
+</form>
+</div>
+{% endblock %}

@@ -1,0 +1,78 @@
+{% load static %}
+
+
+{% include 'user_navigation.html' %}
+
+
+
+<div class="btn btn-warning" style="width:100%; border-radius:0px; margin-top:0.3%;">
+    <marquee  class="text-black" >
+        <b>User Profile</b>
+    </marquee>
+</div>
+
+{% for msg in messages %}
+  <div  class="btn btn-success" style="backgroung-color:black; border-radius:0px;  margin-top:0.3%; width:100%"><marquee ><b>{{msg}}</b></marquee></div>
+{%  endfor   %}
+
+<form  class="container mt-5" method="post" >
+    {% csrf_token %}
+{% for student in student %}
+    <div class="from-row">
+        <div class="from-group col-md-6" >
+            <label><b>First Name</b></label>
+            <input  type="text" class="form-control"  value="{{student.fname}}" name="first_name"required>
+        </div>
+        <br>
+    </div>
+    </div>
+
+
+    <div class="from-row">
+        <div class="from-group col-md-6" >
+            <label><b>Last Name</b></label>
+            <input type="text" class="form-control"value="{{student.lname}}" name="last_name"  required>
+        </div>
+        <br>
+
+
+        <div class="from-group col-md-6" >
+            <label><b>Contact</b></label>
+            <input type="tel" class="form-control" value="{{student.contact}}" name="contact"  required>
+        </div>
+        <br>
+
+        <div class="from-group col-md-6" >
+            <label><b>Email ID</b></label>
+            <input type="text" class="form-control" value="{{student.email}}" name="experience" readonly required>
+        </div>
+        <br><div class="from-group col-md-6" >
+        <lable>Gender</lable>
+              <div style="border:1px solid lightgrey; padding 6px; border-radius:6px">
+           <div class="custom-control custom-radio custom-control-inline">
+                  <input value="{{student.gender}}" style="margin-right:1%" type="radio" name="Gender"/>Male<br>
+           <input style="margin-right:1%" type="radio" name="Gender"/>Female<br>
+           <input style="margin-right:1%" type="radio" name="Gender"/>other
+           </div>
+              </div>
+
+        </div>
+        <br>
+    </div>
+
+    <div class="from-row">
+        <div class="from-group col-md-12" >
+            <label><b>Image</b></label>
+            <img  src="{{student.image.url}}" style="width:100px; height:100px; border-radius:50%">
+        </div>
+        <br>
+    </div>
+    </div>
+    </div>
+
+    <input type="submit" value="Update" class="btn btn-success" style="width:50%; border-radius:0%">
+</form>
+<br>
+<br>
+{%  endfor   %}
+{% include 'footer.html'%}

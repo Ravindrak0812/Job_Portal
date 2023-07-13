@@ -1,0 +1,66 @@
+{% load static %}
+
+{% block body %}
+
+{% include 'navigation.html' %}
+
+<script>
+    function checkpass()
+    {
+    if(document.signup.pwd.value!=document.signup.cpwd.value){
+    alert('Password and Repeat Password field does not match');
+    document.signup.cpwd.focus();
+    return false;
+    }
+    return true;
+    }
+</script>
+
+
+<div class="btn btn-warning" style="width:100%; border-radius:0px; margin-top:0.3%;">
+    <marquee  class="text-black"  style ="">
+        <b>Admin SignUp</b>
+    </marquee>
+</div>
+
+{% for msg in messages %}
+  <div  class="btn btn-success" style="backgroung-color:black; border-radius:0px;  margin-top:0.3%; width:100%"><marquee ><b>{{msg}}</b></marquee></div>
+{%  endfor   %}
+<form  class="container mt-5" onsubmit="return checkpass();" name="signup" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="from-row">
+        <div class="from-group col-md-6" >
+            <label><b>Username</b></label>
+            <input  type="text" class="form-control" name="uname" placeholder="Enter username" required>
+        </div>
+        <br>
+        <div class="from-group col-md-6" >
+            <label><b>Email Id</b></label>
+            <input type="email" pattern="/(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"class="form-control" name="email" placeholder="Enter Email Address" required>
+        </div>
+        <br>
+    </div>
+
+    <div class="from-row">
+        <div class="from-group col-md-6" >
+            <label><b>Password</b></label>
+            <input  type="password" class="form-control" name="pwd" placeholder="Enter Password" required>
+        </div>
+        <br>
+
+        <div class="from-group col-md-6" >
+            <label><b>Confirm Password</b></label>
+            <input type="password" class="form-control" name="cpwd" placeholder="Enter again password" required>
+        </div>
+        <br>
+    </div>
+    </div>
+    </div>
+    <input type="submit" value="Submit" class="btn btn-success" style="width:50%;border-radius:0%">
+</form>
+<br>
+<br>
+{% include 'footer.html'%}
+{% endblock  %}
+</body>
+</html>

@@ -1,0 +1,42 @@
+{% load static %}
+
+{% block body %}
+
+{% include 'navigation.html' %}
+
+<script>
+    function checkemail()
+    {
+    if(document.signup.email.value!=document.login.email.value){
+    alert('Email does not match,Please enter correct email');
+    document.login.email.focus();
+    return false;
+    }
+    return true;
+    }
+</script>
+
+
+<div class="btn btn-warning" style="border-radius:0px; width:100%; margin-top:0.3%">
+    <marquee class="text-black" >
+        <b>User Login</b>
+    </marquee>
+</div>
+
+{% for msg in messages %}
+  <div  class="btn btn-success" style="backgroung-color:black; border-radius:0px;  margin-top:0.3%; width:100%"><marquee ><b>{{msg}}</b></marquee></div>
+{%  endfor   %}
+
+<form class="container mt-5" onsubmit="return checkemail();" name="login" method="post">
+    {% csrf_token %}
+    <label><b>Email Id</b><a class="fa fa-envelope-o" style="margin-left:5px" aria-hidden="true"></a></label>
+    <input style="margin-top:0.5%; border-radius:0px" type="email" pattern="/(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"class="form-control" name="email" placeholder="Enter Email Id" required >
+    <label  style="margin-top:1%"><b>Password</b><a class="fa fa-key" aria-hidden="true" style="margin-left:5px"></a></label>
+    <input  style="margin-top:0.5%; border-radius:0px" type="password" class="form-control" name="pwd" placeholder="Enter Password" required >
+    <input type="submit" value="Login"  class="btn btn-success" style="margin-top:1%;border-radius:0%; width:100px">
+<a href="{% url 'user_signup' %}" class="btn btn-primary" style="margin-top:1%; border-radius:0%; width:15%">CREATE AN ACCOUNT</a>
+</form>
+<br>
+<br>
+{% include 'footer.html'%}
+{% endblock %}

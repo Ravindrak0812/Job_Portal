@@ -1,0 +1,61 @@
+{% load static %}
+
+{% block body %}
+
+{% include 'recruiter_navigation.html' %}
+<style>
+
+tr{text-align:center}
+
+</style>
+
+<div class="btn btn-warning" style="border-radius:0px; width:100%; margin-top:0.3%">
+    <marquee class="text-black" >
+        <b>Applied Candidate List</b>
+    </marquee>
+</div>
+<hr>
+<div class="container">
+<table class="table table-hover " id="example">
+    <thead>
+    <tr style="background-color : #000080 ;  color : white">
+        <th>Sr.No</th>
+        <th>FullName</th>
+        <th>EmailID</th>
+        <th>Contact No</th>
+        <th>Job Title</th>
+        <th>Company</th>
+        <th>ApplyDate</th>
+            <th>Resume</th>
+
+    </tr>
+    </thead>
+
+    <tbody>
+    {% for data1 in data1 %}
+      {% for data in data %}
+    {% for f in f %}
+       {% for a in a %}
+        <tr style="background-color : #DEB887">
+        <td>{{forloop.counter}}</td>
+        <td>{{data1.fname}} {{data1.lname}}</td>
+        <td>{{data1.email}}</td>
+        <td>{{data1.contact}}</td>
+        <td>{{data.title}}</td>
+        <td>{{f.company}}</td>
+        <td>{{data.start_date}}</td>
+        <td> <a href="{{a.image.url}}}">Donwolad Resume</a></td>
+        </td>
+
+    </tr>
+    {% endfor %}
+  {% endfor %}
+      {% endfor %}
+          {% endfor %}
+
+
+    </tbody>
+</table>
+</div>
+
+{% endblock %}

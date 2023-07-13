@@ -1,0 +1,84 @@
+<html>
+<head>
+    {% load static %}
+
+    <title>Online Job Portal</title>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+ .nav-link{
+ color : white;
+ margin-right : 4px;
+    }
+
+ .nav-link:hover{
+ color : yellow;
+ font-weight : bold;
+ border-radius : 10px;
+ }
+
+ .navbar-brand:hover{
+ color : yellow!important;
+
+ }
+
+
+</style>
+
+
+</head>
+<body>
+<div class="container responsive">
+    <div class="row">
+        <div class="col-sm-3">
+            <img src="{% static 'images/job1.jpg' %}" class="responsive" style="width=180px" height="150px">
+        </div>
+
+        <div class="col-sm-6 mt-5 text-center">
+            <span style="font-weight : bold ; font-size : 30px">
+                <span style="color : red">Online Job</span>
+                <span style="color : green">Portal System</span>
+            </span>
+        </div>
+
+        <div class="col-sm-3 mt-5" style="padding-left : 10%">
+       <span style="font-weight : bold; font-size : 30px">
+           <span><i class="fa fa-twitter pl-1"></i></span>
+            <span><i class="fa fa-linkedin pl-1"></i></span>
+            <span><i class="fa fa-instagram pl-1"></i></span>
+            <span><i class="fa fa-facebook pl-1"></i></span>
+       </span>
+        </div>
+    </div>
+</div>
+<nav class="navbar navbar-expand-sm responsive" style="background-color : Darkblue">
+     <a class="navbar-brand text-white font-weight-bold"  style="font-family : Monotype Corsiva; margin-left : 20px; font-size : 30px">Job Portal</a>
+<ul class="navbar-nav">
+    <li class="nav-item">
+        <a class="nav-link " href="{% url 'user_home' %}"  style="margin-left : 280px"><i class="fa fa-home mr-1" style="margin-right:2px"></i>Home</a>
+    </li>
+
+     <li class="nav-item">
+        <a class="nav-link " href="{% url 'user_latestjobs'   %}" ><i class="fa fa-users mr-1" style="margin-right:2px"></i>Job List</a>
+    </li>
+
+     <li class="nav-item">
+        <a class="nav-link " href="{% url 'change_passworduser'  %}"><i class="fa fa-user-circle  mr-1" style="margin-right:2px"></i>Change Password</a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link " href="{% url 'Logout' %}"><i class="fa fa-sign-out mr-1" style="margin-right:2px"></i>Logout</a>
+    </li>
+
+</ul>
+    {% for student in student  %}
+    <a class="navbar-brand text-white font-weight-bold"  style="font-family : Monotype Corsiva; margin-top:0.3%; font-size : 20px"> <i class="fa fa-user-o mr-1" style="margin-right:2px" ></i>{{student.fname}}{{student.lname}}</a>
+    {% endfor %}
+</nav>
+
+</body>
+
+</html>

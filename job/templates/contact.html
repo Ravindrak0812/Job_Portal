@@ -1,0 +1,43 @@
+{% load static %}
+
+{% block body %}
+
+{% include 'navigation.html' %}
+
+
+<style>
+    .mydiv:hover{
+    box-shadow: 0 0 20px 0 rgba(0,0,0,0.3);
+    transform:translateY(-20px);
+    }
+</style>
+<div class="btn btn-warning" style="width:100%; border-radius:0px; margin-top:0.3%;">
+    <marquee  class="text-black"  style ="">
+        <b>Contact Us</b>
+    </marquee>
+</div>
+<hr>
+<div class="container mt-5 ">
+    <br>
+    <br>
+<div class="row mt-5">
+    <div class="col sm-3 mydiv">
+        <h4 class="text-center"><i class="fa fa-phone"></i>Contact</h4>
+        <p class="text-center">+91 8765675434</p>
+    </div>
+      <div class="col sm-3 mydiv">
+        <h4 class="text-center"><i class="fa fa-envelope"></i>Email Id</h4>
+        <p class="text-center">ravindrakumar@gmail.com</p>
+    </div>
+      <div class="col sm-3 mydiv ">
+        <h4 class="text-center"><i class="fa fa-location-arrow"></i>Address</h4>
+        <p class="text-center">Indra Nagar Sector:18</p>
+    </div>
+      <div class="col sm-3 mydiv">
+        <h4 class="text-center"><i class="fa fa-clock-o" aria-hidden="true"></i>Office Timing</h4>
+        <p class="text-center">10:00 A.M to 7:00 P.M <br>
+        Monday to Sunday</p>
+    </div>
+</div>
+</div>
+{% endblock  %}

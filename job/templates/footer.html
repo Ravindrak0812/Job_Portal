@@ -1,0 +1,38 @@
+{% load static %}
+
+<div  class="mt-3" style="background-color : Black; width:100%; height:350px">
+<div class="container">
+   <div class="row">
+       <div class="col-md-4 mt-3">
+           <h3 class="text-white">Contact Information</h3>
+           <p style="color:yellow ; font-size:18px"><i class="fa fa-map-marker text-danger"></i> Indra Nagar Sector:18</p>
+           <p style="color:yellow ; font-size:18px"><i class="fa fa-envelope text-danger"></i> ravindra123@gmail.com</p>
+           <p style="color:yellow ; font-size:18px"><i class="fa fa-mobile text-danger"></i> Phone: +91 8673219654 </p>
+           <p style="color:yellow ; font-size:18px"><i class="fa fa-globe text-danger"></i> W: www.ravisoft.com </p>
+       </div>
+
+       <div class="col-md-4 mt-3">
+           <h3 class="text-white">Online Placement</h3>
+           <p style="color:yellow ; font-size:18px">Online placement is the process of matching job seekers with job openings using online platforms or software. It is convenient, fast, and cost-effective for both job seekers and employers.An online placement portal is a platform that connects job seekers with employment opportunities and assists in the recruitment process. </p>
+       </div>
+
+      <div class="col-md-4 mt-3">
+          <h3   style="margin-left:30%" class="text-white">Feedback</h3>
+          <form method="post" class="form-inline ">
+             {% csrf_token%}
+              <input style="margin-top:5%; border-radius:0px" type="text" name="text"  placeholder=" Enter Your Feedback Here..." required  class="form-control ">
+              <input  style="margin-top :1%; border-radius:0px" type="submit" value="Send" class="btn btn-primary form-control">
+          </form>
+
+<div style="" class="container">
+    <div class="row ">
+
+<h6 class="text-center text-white" >Copyright © 2022 designed by Ravindra Kumar, India. All rights reserved</h6>
+
+    </div>
+
+</div>
+      </div>
+   </div>
+</div>
+</div>

@@ -1,0 +1,55 @@
+{% load static %}
+
+{% block body %}
+
+{% include 'recruiter_navigation.html' %}
+
+<div class="btn btn-warning" style="width:100%; border-radius:0px; margin-top:0.3%;">
+    <marquee  class="text-black"  style ="">
+        <b>Change Company Logo</b>
+    </marquee>
+</div>
+
+{% for msg in messages %}
+  <div  class="btn btn-success" style="backgroung-color:black; border-radius:0px;  margin-top:0.3%; width:100%"><marquee ><b>{{msg}}</b></marquee></div>
+{%  endfor   %}
+
+<form  class="container mt-5" method="post" >
+    {% csrf_token %}
+
+    <div class="from-row">
+        <div class="from-group col-md-6" >
+            <label><b>Job Title</b></label>
+            <input  type="text" class="form-control" name="jobtitle" value="{{job.title}}" placeholder="Enter First Name" readonly required>
+        </div>
+        <br>
+    </div>
+    </div>
+
+          <div class="from-row">
+        <div class="from-group col-md-6" >
+            <label><b>Salary(Per Month)</b></label>
+            <input type="text" class="form-control" name="salary" value="{{job.salary}}" required>
+        </div>
+        <br>
+ <div class="from-row">
+     <div class="from-group col-md-12" >
+     <img style="border-radius:1px" src="{{job.image.url}} " width="100" height="90">
+        </div>
+        <br>
+
+ <div class="dorm-row">
+        <div class="from-group col-md-12" >
+            <label><b>Company Logo</b></label>
+            <input type="file" class="form-control" name="logo"  value="{{job.experience}}"  required>
+        </div>
+        <br>
+    <input type="submit" value="Update" onclick="alert('Logo Updated Successfully')" onsubmit="window.location('{% url 'change_companylogo' job.id %}')" class="btn btn-success" style="width:100%; border-radius:0%">
+ </div>
+</form>
+<br>
+<br>
+{% include 'footer.html'%}
+
+
+{% endblock %}
