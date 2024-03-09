@@ -20,6 +20,12 @@ flex-wrap:wrap;
      width : 91%;
 
     }
+ .carousel-item:hover{
+  transform:  scale(1.2);
+    }
+    .img:hover{
+    transform:  scale(1.2);
+    }
 </style>
 <div class="" style="border-radius:0px; width:100%; margin-top:0.%">
     <marquee class="text-black"  >
@@ -31,13 +37,13 @@ flex-wrap:wrap;
 <!--</div>-->
 
 <!-- Carousel -->
-<div style="margin-top:%" id="demo" class="carousel slide" data-bs-ride="carousel" data-bs-intervel="'hover'">
+<div style="margin-top:%;"  id="demo" class="carousel slide" data-bs-ride="carousel" data-bs-intervel="'hover'">
 
   <!-- Indicators/dots -->
 
 
   <!-- The slideshow/carousel -->
-  <div class="carousel-inner">
+  <div class="carousel-inner ">
     <div class="carousel-item active">
       <img src="{% static 'images/img.webp' %}"  alt="Los Angeles" class="d-block w-100 responsive">
     </div>
@@ -63,28 +69,28 @@ flex-wrap:wrap;
     <h1 class="text-center text-white">-----------| OUR PLACED STUDENTS |-----------</h1>
 
     <div style="" class="row mt-3">
-        <div class="col-md-3">
-           <img  src="{% static 'images/img1.webp' %}" class="responsive" style="height : 200px; width : 100%; margin-top:5%; border-radius:50%">
+        <div class="col-md-3 img">
+           <img  class="" src="{% static 'images/img1.webp' %}" class="responsive" style="height : 200px; width : 100%; margin-top:5%; border-radius:50%">
            <div class="content">
-           <p>Capegimini</p>
+           <p class="img">Capegimini</p>
            </div>
         </div>
 
-        <div class="col-md-3">
-           <img src="{% static 'images/img2.webp' %}" class="responsive" style="height : 200px; width : 100%; margin-top:5%; border-radius:50%">
+        <div class="col-md-3 img">
+           <img  src="{% static 'images/img2.webp' %}" class="responsive" style="height : 200px; width : 100%; margin-top:5%; border-radius:50%">
            <div class="content">
-           <p>Amazon</p>
+           <p class="">Amazon</p>
            </div>
         </div>
 
-        <div class="col-md-3">
+        <div class="col-md-3 img">
            <img src="{% static 'images/img3.webp' %}" class="responsive" style="height : 200px; width : 100%; margin-top:5%; border-radius:50%">
            <div class="content">
            <p>Google</p>
            </div>
         </div>
 
-        <div class="col-md-3">
+        <div class="col-md-3 img">
            <img src="{% static 'images/img5.jpg' %}" class="responsive" style="height : 200px; width : 100%; margin-top:5%; border-radius:50%">
            <div class="content">
            <p>Microsoft</p>
@@ -93,28 +99,28 @@ flex-wrap:wrap;
     </div>
 
        <div class="row mt-3">
-        <div class="col-md-3">
+        <div class="col-md-3 img">
            <img src="{% static 'images/img6.jpg' %}" class="responsive" style="height : 200px; width : 100%; margin-top:5%; border-radius:50%">
            <div class="content">
            <p>Walmart</p>
            </div>
         </div>
 
-        <div class="col-md-3">
+        <div class="col-md-3 img">
            <img src="{% static 'images/img7.jpg' %}" class="responsive" style="height : 200px; width : 100%; margin-top:5%; border-radius:50%">
            <div class="content">
            <p>HCL</p>
            </div>
         </div>
 
-        <div class="col-md-3">
+        <div class="col-md-3 img">
            <img src="{% static 'images/img8.jpg' %}" class="responsive" style="height : 200px; width : 100%; margin-top:5%; border-radius:50%">
            <div class="content">
            <p>Linkedin</p>
            </div>
         </div>
 
-        <div class="col-md-3">
+        <div class="col-md-3 img">
            <img src="{% static 'images/img9.jpg' %}" class="responsive" style="height : 200px; width : 100%; margin-top:5%; border-radius:50%">
            <div class="content">
            <p>Swiggy</p>

@@ -5,6 +5,7 @@ from django.contrib import messages
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login,logout
 from datetime import date
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 
@@ -14,7 +15,6 @@ def index(request):
 
 def about(request):
     return render(request, 'about.html')
-
 
 def admin_login(request):
     if request.method == 'POST':
@@ -341,7 +341,6 @@ def user_latestjobs(request):
             li.append(i.job.id)
         d =  {'data': data, 'f':f,'li':li}
         return render(request, 'user_latestjobs.html',d)
-
 
 def job_detail(request):
     f = Recruiter.objects.all()
