@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-(!h$t2llj3g)y7!xkr+jse3=(#_)i3wayd-vyz^i5p^i9e+&6z
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app', '.now.sh']
+ALLOWED_HOSTS = ['.vercel.app', 'now.sh', '127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -79,11 +79,14 @@ WSGI_APPLICATION = 'job_portal.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'OGDkmoQhovhcFbrqanyuXyRnXaMFxlrw',
+        'HOST': 'viaduct.proxy.rlwy.net',
+        'PORT': '29282',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
