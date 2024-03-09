@@ -1,0 +1,130 @@
+{% load static %}
+
+{% block body %}
+
+{% include 'navigation.html' %}
+
+<style>
+.container{
+max-width : 90%;
+flex-wrap:wrap;
+}
+
+.content{
+     text-align : center;
+
+     bottom:0;
+     background:rgba(0,0,0,0.5);
+     color : white;
+     height : 30px;
+     width : 91%;
+
+    }
+</style>
+<div class="" style="border-radius:0px; width:100%; margin-top:0.%">
+    <marquee class="text-black"  >
+        <b>Online Job Portal</b>
+    </marquee>
+</div>
+<!--//<div class="" style="margin-top : 0.5%">-->
+<!--    <img src="{% static 'images/img.webp' %}" style="height : 100%; width : 100% ">-->
+<!--</div>-->
+
+<!-- Carousel -->
+<div style="margin-top:%;"  id="demo" class="carousel slide" data-bs-ride="carousel" data-bs-intervel="'hover'">
+
+  <!-- Indicators/dots -->
+
+
+  <!-- The slideshow/carousel -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{% static 'images/img.webp' %}"  alt="Los Angeles" class="d-block w-100 responsive">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'images/img2.jpg' %}" alt="Chicago" class="d-block w-100 responsive">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'images/img10.jpg' %}" alt="New York" class="d-block w-100 responsive">
+    </div>
+
+  <!-- Left and right controls/icons -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+    <div>
+    <h1 style="border-radius:0px; margin-top:0.3%" class="text-center btn btn-warning form-control">Placed Students</h1>
+    </div>
+<div class="container" style="background-color: black; height:650px; margin-top : 1%">
+    <h1 class="text-center text-white">-----------| OUR PLACED STUDENTS |-----------</h1>
+
+    <div style="" class="row mt-3">
+        <div class="col-md-3">
+           <img  src="{% static 'images/img1.webp' %}" class="responsive" style="height : 200px; width : 100%; margin-top:5%; border-radius:50%">
+           <div class="content">
+           <p>Capegimini</p>
+           </div>
+        </div>
+
+        <div class="col-md-3">
+           <img src="{% static 'images/img2.webp' %}" class="responsive" style="height : 200px; width : 100%; margin-top:5%; border-radius:50%">
+           <div class="content">
+           <p>Amazon</p>
+           </div>
+        </div>
+
+        <div class="col-md-3">
+           <img src="{% static 'images/img3.webp' %}" class="responsive" style="height : 200px; width : 100%; margin-top:5%; border-radius:50%">
+           <div class="content">
+           <p>Google</p>
+           </div>
+        </div>
+
+        <div class="col-md-3">
+           <img src="{% static 'images/img5.jpg' %}" class="responsive" style="height : 200px; width : 100%; margin-top:5%; border-radius:50%">
+           <div class="content">
+           <p>Microsoft</p>
+           </div>
+        </div>
+    </div>
+
+       <div class="row mt-3">
+        <div class="col-md-3">
+           <img src="{% static 'images/img6.jpg' %}" class="responsive" style="height : 200px; width : 100%; margin-top:5%; border-radius:50%">
+           <div class="content">
+           <p>Walmart</p>
+           </div>
+        </div>
+
+        <div class="col-md-3">
+           <img src="{% static 'images/img7.jpg' %}" class="responsive" style="height : 200px; width : 100%; margin-top:5%; border-radius:50%">
+           <div class="content">
+           <p>HCL</p>
+           </div>
+        </div>
+
+        <div class="col-md-3">
+           <img src="{% static 'images/img8.jpg' %}" class="responsive" style="height : 200px; width : 100%; margin-top:5%; border-radius:50%">
+           <div class="content">
+           <p>Linkedin</p>
+           </div>
+        </div>
+
+        <div class="col-md-3">
+           <img src="{% static 'images/img9.jpg' %}" class="responsive" style="height : 200px; width : 100%; margin-top:5%; border-radius:50%">
+           <div class="content">
+           <p>Swiggy</p>
+           </div>
+        </div>
+    </div>
+
+</div>
+</div>
+
+{% include 'slider.html' %}
+{% include 'footer.html'  %}
+{% endblock %}
